@@ -1,8 +1,12 @@
 {
+  "name": "wimmelsoft/php-routing-app",
+  "description": "PHP Routing App",
+  "version": "0.5",
   "autoload": {
     "psr-4": {
       "wimmelsoft\\core\\": "core",
-      "wimmelsoft\\service\\": "service"
+      "wimmelsoft\\service\\": "service",
+      "wimmelsoft\\model\\": "model"
     }
   },
   "require": {
@@ -15,8 +19,5 @@
       "name": "Wim Wiltenburg",
       "role": "Lead developer"
     }
-  ],
-  "description": "PHP Routing App",
-  "version": "0.5",
-  "name": "wimmelsoft/php-routing-app"
+  ]
 }

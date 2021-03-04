@@ -1,5 +1,7 @@
 <?php 
 
+namespace wimmelsoft\model;
+
 class User {
     private $id;
     private $first_name;
