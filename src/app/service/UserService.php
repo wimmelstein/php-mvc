@@ -1,18 +1,16 @@
 <?php
 
-namespace app\service;
+namespace wimmelsoft\service;
 
-use app\core\Application;
+use wimmelsoft\core\Application;
 
-class UserService
-{
+class UserService {
 
-    private  string $select_all_users = 'select * from users';
-    private  string $insert_user = 'INSERT INTO users  (first_name, last_name, age) VALUES (:first_name, :last_name, :age)';
-    private  string $select_one_user = 'SELECT * FROM users where id=:id';
+    private string $select_all_users = 'select * from users';
+    private string $insert_user = 'INSERT INTO users  (first_name, last_name, age) VALUES (:first_name, :last_name, :age)';
+    private string $select_one_user = 'SELECT * FROM users where id=:id';
 
-    function getUsers()
-    {
+    function getUsers() {
         $result = Application::$app->pdo->query($this->select_all_users);
         return $result;
     }
@@ -23,8 +21,7 @@ class UserService
         $stmt->execute(['first_name' => $first_name, 'last_name' => $last_name, 'age' => $age]);
     }
 
-    function getUser($id)
-    {
+    public function getUser($id) {
         $stmt = Application::$app->pdo->prepare($this->select_one_user);
         $stmt->execute(['id' => $id]);
         $user = $stmt->fetch();

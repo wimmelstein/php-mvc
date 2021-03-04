@@ -1,10 +1,8 @@
 <?php
+require_once dirname(__FILE__) . '/../bootstrap.php';
 
-require_once('core\Application.php');
-require_once('controllers\ApiController.php');
-
-use app\core\Application;
 use app\controllers\ApiController;
+use wimmelsoft\core\Application;
 
 $config = [
     'db' => [
@@ -20,9 +18,6 @@ $config = [
 ];
 
 $app = new Application(__DIR__, $config);
-
-
-
 
 $app->router->get('/', 'home');
 $app->router->get('/about', 'about');

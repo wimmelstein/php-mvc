@@ -3,8 +3,7 @@
 
 namespace app\controllers;
 
-use app\core\Application;
-use app\service\UserService;
+use wimmelsoft\core\Application;
 
 class ApiController {
 

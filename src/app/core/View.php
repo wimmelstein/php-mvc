@@ -1,21 +1,22 @@
 <?php
 
 
-namespace app\core;
+namespace wimmelsoft\core;
 
 
 class View {
 
     public function renderTemplate() {
+
         ob_start();
-        include_once(Application::$ROOT_DIR . '/layout/template.php');
+        include_once(Application::$ROOT_DIR . '/../layout/template.php');
         return ob_get_clean();
     }
 
     public function renderContent($view)
     {
         ob_start();
-        include_once (Application::$ROOT_DIR . "/views/$view.php");
+        include_once(Application::$ROOT_DIR . "/../views/$view.php");
         return ob_get_clean();
     }
 

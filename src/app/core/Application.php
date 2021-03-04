@@ -1,24 +1,13 @@
 <?php
 
 
-namespace app\core;
+namespace wimmelsoft\core;
 
-require_once(__DIR__ . '/core/' .   'Request.php');
-require_once(__DIR__ . '/core/' .   'Response.php');
-require_once(__DIR__ . '/core/' .   'Router.php');
-require_once (__DIR__ . '/core/' .   'View.php');
-require_once(__DIR__ . '/core/' .   'Sesssion.php');
-require_once(__DIR__ . '/service/' .   'UserService.php');
-
-use app\core\Request;
-use app\core\Response;
-use app\core\Router;
-use app\core\View;
-use app\core\Sesssion;
 use \PDO;
-use app\service\UserService;
-class Application
-{
+use \PDOException;
+use wimmelsoft\service\UserService;
+
+class Application {
 
     public static Application $app;
     public Request $request;
@@ -41,14 +30,13 @@ class Application
         $this->session = new Sesssion();
         $this->session->set('applicationName', $config['general']['applicationName']);
         $this->router = new Router($this->request, $this->response);
-        $this->pdo = $this->getPDO($config);
+//        $this->pdo = $this->getPDO($config);
         $this->userService = new UserService();
 
 
     }
 
-    private function getPDO($config): \PDO
-    {
+    private function getPDO($config): PDO {
         $options = [
             PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION,
             PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC,
@@ -64,8 +52,8 @@ class Application
         $dsn = "mysql:host=$hostname;port=$port;dbname=$db;charset=$charset";
         try {
             $_pdo = new PDO($dsn, $user, $password, $options);
-        } catch (\PDOException $e) {
-            throw new \PDOException($e->getMessage(), (int)$e->getCode());
+        } catch (PDOException $e) {
+            throw new PDOException($e->getMessage(), (int)$e->getCode());
         }
         return $_pdo;
     }

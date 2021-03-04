@@ -1,16 +1,13 @@
 <?php
 
+namespace wimmelsoft\core;
 
-namespace app\core;
-include_once('Request.php');
-class Router
-{
+class Router {
     public Request $request;
     public Response $response;
     public array $routes = [];
 
-    public function __construct(Request $request, Response $response)
-    {
+    public function __construct(Request $request, Response $response) {
         $this->request = $request;
         $this->response = $response;
     }
@@ -19,8 +16,7 @@ class Router
         $this->routes['get'][$path] = $callback;
     }
 
-    public function resolve()
-    {
+    public function resolve() {
         $method = $this->request->getMethod();
         $path = $this->request->getPath();
         $params = [];
@@ -47,11 +43,10 @@ class Router
     }
 
     private function delegateToView($view) {
-        return Application::$app->view->render($view);
+        Application::$app->view->render($view);
     }
 
-    private function isApiCall($path) : bool
-    {
+    private function isApiCall($path) : bool {
 
         return  (explode('/', $path)[1] === 'api');
     }

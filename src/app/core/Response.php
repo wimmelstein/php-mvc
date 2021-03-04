@@ -1,11 +1,10 @@
 <?php
 
 
-namespace app\core;
+namespace wimmelsoft\core;
 
 
-class Response
-{
+class Response {
     public int $status;
 
 

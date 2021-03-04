@@ -1,6 +1,6 @@
 <?php
 
-use app\core\Application;
+use wimmelsoft\core\Application;
 
 ?>
 
@@ -13,15 +13,16 @@ use app\core\Application;
 
     <title>Hello World!</title>
     <!-- Bootstrap CSS -->
-    <link href="/css/bootstrap.min.css" rel="stylesheet" type="text/css">
-    <link href="/css/style.css" rel="stylesheet" type="text/css">
+    <link href="../css/bootstrap.min.css" rel="stylesheet" type="text/css">
+    <link href="../css/style.css" rel="stylesheet" type="text/css">
 
 </head>
 <body>
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
     <div class="container-fluid">
         <a class="navbar-brand" href="#">Navbar</a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarNav">

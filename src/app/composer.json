@@ -1,0 +1,22 @@
+{
+  "autoload": {
+    "psr-4": {
+      "wimmelsoft\\core\\": "core",
+      "wimmelsoft\\service\\": "service"
+    }
+  },
+  "require": {
+    "ext-json": "*",
+    "ext-pdo_mysql": "*",
+    "ext-pdo": "*"
+  },
+  "authors": [
+    {
+      "name": "Wim Wiltenburg",
+      "role": "Lead developer"
+    }
+  ],
+  "description": "PHP Routing App",
+  "version": "0.5",
+  "name": "wimmelsoft/php-routing-app"
+}

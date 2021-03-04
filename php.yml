@@ -21,7 +21,7 @@ services:
       - php  
 
   server:
-    image: wimmelsoft/php-mysql-pdo:0.1
+    image: wimmelsoft/php-server:1.8.0
     depends_on:
       - db
     deploy:
@@ -35,7 +35,9 @@ services:
     networks:
       - php
     volumes:
-      - ./src:/var/www/html
+      - "./src/app:/var/www/html/"
+      - "./include/000-default.conf:/etc/apache2/sites-available/000-default.conf"
+      - "./include/apache2.conf:/etc/apache2/apache2.conf"
 
   phpmyadmin:
     image: phpmyadmin:latest
