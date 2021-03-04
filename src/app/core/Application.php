@@ -30,7 +30,7 @@ class Application {
         $this->session = new Sesssion();
         $this->session->set('applicationName', $config['general']['applicationName']);
         $this->router = new Router($this->request, $this->response);
-//        $this->pdo = $this->getPDO($config);
+        $this->pdo = $this->getPDO($config);
         $this->userService = new UserService();
 
 
